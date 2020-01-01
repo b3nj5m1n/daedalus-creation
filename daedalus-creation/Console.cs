@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace daedalus_creation
 {
-    public partial class Console : Form
+    public partial class Console_Form : Form
     {
-        public Console()
+        public Console_Form()
         {
             InitializeComponent();
         }

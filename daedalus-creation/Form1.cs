@@ -10,11 +10,33 @@ using System.Windows.Forms;
 
 namespace daedalus_creation
 {
-    public partial class Form1 : Form
+    public partial class Canvas_Form : Form
     {
-        public Form1()
+        public Canvas_Form()
         {
             InitializeComponent();
+        }
+
+        private void Graphics_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void test()
+        {
+            Grid g = new Grid(new int[2] { 15, 15 });
+            g.initalize();
+            Renderer r = new Renderer(g, this, this.CreateGraphics());
+            r.draw_grid();
+            Console.WriteLine(".");
+        }
+
+        private void Canvas_Form_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == Convert.ToChar(Keys.Enter))
+            {
+                test();
+            }
         }
     }
 }

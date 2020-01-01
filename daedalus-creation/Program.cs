@@ -16,7 +16,7 @@ namespace daedalus_creation
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Graphics());
+            Application.Run(new Canvas_Form());
         }
     }
 }

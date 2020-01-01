@@ -2,8 +2,9 @@ C:\Users\b3nj4m1n\Documents\GitHub\daedalus-creation\daedalus-creation\bin\Debug
 C:\Users\b3nj4m1n\Documents\GitHub\daedalus-creation\daedalus-creation\bin\Debug\daedalus-creation.exe
 C:\Users\b3nj4m1n\Documents\GitHub\daedalus-creation\daedalus-creation\bin\Debug\daedalus-creation.pdb
 C:\Users\b3nj4m1n\Documents\GitHub\daedalus-creation\daedalus-creation\obj\Debug\daedalus-creation.csprojAssemblyReference.cache
-C:\Users\b3nj4m1n\Documents\GitHub\daedalus-creation\daedalus-creation\obj\Debug\daedalus_creation.Form1.resources
 C:\Users\b3nj4m1n\Documents\GitHub\daedalus-creation\daedalus-creation\obj\Debug\daedalus_creation.Properties.Resources.resources
 C:\Users\b3nj4m1n\Documents\GitHub\daedalus-creation\daedalus-creation\obj\Debug\daedalus-creation.csproj.GenerateResource.cache
 C:\Users\b3nj4m1n\Documents\GitHub\daedalus-creation\daedalus-creation\obj\Debug\daedalus-creation.exe
 C:\Users\b3nj4m1n\Documents\GitHub\daedalus-creation\daedalus-creation\obj\Debug\daedalus-creation.pdb
+C:\Users\b3nj4m1n\Documents\GitHub\daedalus-creation\daedalus-creation\obj\Debug\daedalus_creation.Console_Form.resources
+C:\Users\b3nj4m1n\Documents\GitHub\daedalus-creation\daedalus-creation\obj\Debug\daedalus_creation.Canvas_Form.resources
