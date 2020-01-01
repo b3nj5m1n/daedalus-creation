@@ -15,6 +15,7 @@ namespace daedalus_creation
         public Timer timer;
         public Renderer renderer;
         public Node current_node;
+        private Node old_node;
 
         /// <summary>
         /// Initalize object, starting point is 0,0
@@ -34,6 +35,7 @@ namespace daedalus_creation
         {
             grid = Grid;
             current_node = starting_point;
+            old_node = current_node;
         }
 
         /// <summary>
@@ -66,11 +68,13 @@ namespace daedalus_creation
             {
                 while (step() != false)
                 {
+                    renderer.draw_node(old_node);
                     foreach (Node neighbour in grid.get_surroundings(current_node, true, false, false))
                     {
                         renderer.draw_node(neighbour);
                     }
                     renderer.draw_node(current_node, Color.LightSeaGreen);
+                    old_node = current_node;
                 }
             }
 
@@ -83,11 +87,13 @@ namespace daedalus_creation
             }
             else
             {
+                renderer.draw_node(old_node);
                 foreach (Node neighbour in grid.get_surroundings(current_node, true, false, false))
                 {
                     renderer.draw_node(neighbour);
                 }
                 renderer.draw_node(current_node, Color.LightSeaGreen);
+                old_node = current_node;
             }
         }
 
