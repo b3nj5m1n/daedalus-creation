@@ -36,7 +36,7 @@ namespace daedalus_creation
         /// </summary>
         public void remove()
         {
-
+            grid = new Node[size[0], size[1]];
         }
 
         /// <summary>
@@ -228,6 +228,44 @@ namespace daedalus_creation
                 return null;
             }
         }
+
+        /// <summary>
+        /// Remove the wall between two nodes
+        /// </summary>
+        /// <param name="n1">First Node</param>
+        /// <param name="n2">Second Node</param>
+        public void remove_wall(Node n1, Node n2)
+        {
+            Console.WriteLine("Removing wall between " + n1.coordinates.ToString() + " and " + n2.coordinates.ToString());
+            Node R = get_right(n1, true, false, false);
+            Console.WriteLine(R.coordinates.ToString() + "," + n1.coordinates.ToString() + "," + n2.coordinates.ToString());
+            // Test if node 2 is to the right of node 1
+            if (R.coordinates.x == n2.coordinates.x && R.coordinates.y == n2.coordinates.y)
+            {
+                Console.WriteLine("...");
+                // Disable east wall of node 1 to make a connection between the two
+                n1.walls.east_active = false;
+            }
+            // Test if node 2 is to the left of node 1
+            if (get_left(n1, true, false, false) == n2)
+            {
+                // Disable east wall of node 2 to make a connection between the two
+                n2.walls.east_active = false;
+            }
+            // Test if node 2 is to the top of node 1
+            if (get_up(n1, true, false, false) == n2)
+            {
+                // Disable south wall of node 2 to make a connection between the two
+                n2.walls.south_active = false;
+            }
+            // Test if node 2 is to the bottom of node 1
+            if (get_down(n1, true, false, false) == n2)
+            {
+                // Disable south wall of node 1 to make a connection between the two
+                n1.walls.south_active = false;
+            }
+        }
+
 
     }
 }
