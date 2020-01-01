@@ -57,9 +57,26 @@ namespace daedalus_creation
         public void run(int delay, Renderer Renderer)
         {
             renderer = Renderer;
-            timer = new Timer(delay);
-            timer.Elapsed += OnTimedEvent;
-            timer.Start();
+            // If the delay is not 0 milliseconds use the timer and its event
+            if (delay != 0)
+            {
+                timer = new Timer(delay);
+                timer.Elapsed += OnTimedEvent;
+                timer.Start();
+            }
+            // If the delay is 0 just draw after every step
+            else
+            {
+                while (step() != false)
+                {
+                    foreach (Node neighbour in grid.get_surroundings(current_node, true, false, false))
+                    {
+                        renderer.draw_node(neighbour);
+                    }
+                    renderer.draw_node(current_node, Color.LightSeaGreen);
+                }
+            }
+            
         }
         private void OnTimedEvent(Object source, System.Timers.ElapsedEventArgs e)
         {
