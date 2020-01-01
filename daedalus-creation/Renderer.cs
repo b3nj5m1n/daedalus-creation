@@ -11,15 +11,15 @@ namespace daedalus_creation
     {
         Theme theme;
         Grid grid;
-        Canvas form;
+        Canvas_Form form;
         Graphics graphics;
 
-        public Renderer(Grid Grid, Canvas Form)
+        public Renderer(Grid Grid, Canvas_Form Form, Graphics Graphics)
         {
             grid = Grid;
             form = Form;
             theme = new Theme();
-            graphics = form.CreateGraphics();
+            graphics = Graphics;
         }
 
         /// <summary>
@@ -79,6 +79,10 @@ namespace daedalus_creation
             float s_pos_y = (node.coordinates.y * (get_node_size_y() + get_wall_size_y())) + get_node_size_y();
             // Draw south wall
             graphics.FillRectangle(new SolidBrush(Color.Green), s_pos_x, s_pos_y, get_node_size_x(), get_wall_size_y());
+            // Calculate position of fill
+
+            // Draw fill
+
         }
 
         /// <summary>
