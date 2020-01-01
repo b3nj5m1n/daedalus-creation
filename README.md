@@ -3,7 +3,11 @@
 
 ## Currently implemented:
 ### Generation
-- 
+- recursive backtracking
+- hunt and kill
+- aldgous broder
+- growing tree
+- binary tree
 ### Solving
 - 
 
