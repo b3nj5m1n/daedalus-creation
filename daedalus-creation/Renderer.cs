@@ -80,9 +80,10 @@ namespace daedalus_creation
             // Draw south wall
             graphics.FillRectangle(new SolidBrush(Color.Green), s_pos_x, s_pos_y, get_node_size_x(), get_wall_size_y());
             // Calculate position of fill
-
+            float fill_pos_x = s_pos_x + get_node_size_x();
+            float fill_pos_y = ew_pos_y + get_node_size_y();
             // Draw fill
-
+            graphics.FillRectangle(new SolidBrush(Color.Blue), fill_pos_x, fill_pos_y, get_wall_size_x(), get_wall_size_y());
         }
 
         /// <summary>
