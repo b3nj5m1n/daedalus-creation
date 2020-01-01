@@ -9,7 +9,7 @@ namespace daedalus_creation
     class Grid
     {
         Node[,] grid;
-        int[] size;
+        public int[] size;
 
         Grid(int[] Size)
         {
@@ -95,6 +95,23 @@ namespace daedalus_creation
         public List<Node> get_surroundings(Node node, bool exists, bool unvisited, bool valid)
         {
             return null;
+        }
+
+        /// <summary>
+        /// Return the node in the grid at the given position, returns null if not existing
+        /// </summary>
+        /// <param name="coordinates">Coordinates of the node</param>
+        /// <returns></returns>
+        public Node node_by_vector(Vector2 coordinates)
+        {
+            if (coordinates.x >= 0 && coordinates.y >= 0 && coordinates.x < size[0] && coordinates.y < size[1])
+            {
+                return grid[coordinates.x, coordinates.y];
+            }
+            else
+            {
+                return null;
+            }
         }
 
     }
