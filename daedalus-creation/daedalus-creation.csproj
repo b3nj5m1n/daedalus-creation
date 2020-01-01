@@ -60,6 +60,7 @@
     </Compile>
     <Compile Include="generator.cs" />
     <Compile Include="gen_aldous_broder.cs" />
+    <Compile Include="gen_binary_tree.cs" />
     <Compile Include="gen_growing_tree.cs" />
     <Compile Include="gen_hunt_and_kill.cs" />
     <Compile Include="gen_recursive_backtracking.cs" />

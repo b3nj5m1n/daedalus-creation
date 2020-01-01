@@ -34,7 +34,8 @@ namespace daedalus_creation
             // generator gen = new gen_recursive_backtracking(g);
             //generator gen = new gen_hunt_and_kill(g);
             //generator gen = new gen_aldous_broder(g);
-            generator gen = new gen_growing_tree(g, 1);
+            //generator gen = new gen_growing_tree(g, 1);
+            generator gen = new gen_binary_tree(g, 3);
             gen.run(50, r);
             // r.draw_grid();
         }
