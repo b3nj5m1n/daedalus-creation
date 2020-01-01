@@ -49,7 +49,34 @@ namespace daedalus_creation
         /// <returns></returns>
         public Node get_up(Node node, bool exists, bool unvisited, bool valid)
         {
-            return null;
+            Vector2 new_coordinates = new Vector2(node.coordinates.x, node.coordinates.y);
+            new_coordinates.y -= 1;
+            Node new_node = node_by_vector(new_coordinates);
+            // If the existance of the node is required, test if it exists
+            if (exists)
+            {
+                if (new_node == null)
+                {
+                    return null;
+                }
+            }
+            // If the node has to be unvisited, test if it has been visited (The existance of the node is a requirement for this)
+            if (exists && unvisited)
+            {
+                if (new_node.visited)
+                {
+                    return null;
+                }
+            }
+            // If a path between the two nodes has to be valid, test if there is a wall between the two (The existance of the node is a requirement for this)
+            if (exists && valid)
+            {
+                if (new_node.walls.south_active)
+                {
+                    return null;
+                }
+            }
+            return new_node;
         }
 
         /// <summary>
@@ -62,7 +89,34 @@ namespace daedalus_creation
         /// <returns></returns>
         public Node get_down(Node node, bool exists, bool unvisited, bool valid)
         {
-            return null;
+            Vector2 new_coordinates = new Vector2(node.coordinates.x, node.coordinates.y);
+            new_coordinates.y += 1;
+            Node new_node = node_by_vector(new_coordinates);
+            // If the existance of the node is required, test if it exists
+            if (exists)
+            {
+                if (new_node == null)
+                {
+                    return null;
+                }
+            }
+            // If the node has to be unvisited, test if it has been visited (The existance of the node is a requirement for this)
+            if (exists && unvisited)
+            {
+                if (new_node.visited)
+                {
+                    return null;
+                }
+            }
+            // If a path between the two nodes has to be valid, test if there is a wall between the two (The existance of the node is a requirement for this)
+            if (exists && valid)
+            {
+                if (node.walls.south_active)
+                {
+                    return null;
+                }
+            }
+            return new_node;
         }
 
         /// <summary>
@@ -75,7 +129,34 @@ namespace daedalus_creation
         /// <returns></returns>
         public Node get_right(Node node, bool exists, bool unvisited, bool valid)
         {
-            return null;
+            Vector2 new_coordinates = new Vector2(node.coordinates.x, node.coordinates.y);
+            new_coordinates.x += 1;
+            Node new_node = node_by_vector(new_coordinates);
+            // If the existance of the node is required, test if it exists
+            if (exists)
+            {
+                if (new_node == null)
+                {
+                    return null;
+                }
+            }
+            // If the node has to be unvisited, test if it has been visited (The existance of the node is a requirement for this)
+            if (exists && unvisited)
+            {
+                if (new_node.visited)
+                {
+                    return null;
+                }
+            }
+            // If a path between the two nodes has to be valid, test if there is a wall between the two (The existance of the node is a requirement for this)
+            if (exists && valid)
+            {
+                if (node.walls.east_active)
+                {
+                    return null;
+                }
+            }
+            return new_node;
         }
 
         /// <summary>
@@ -88,7 +169,34 @@ namespace daedalus_creation
         /// <returns></returns>
         public Node get_left(Node node, bool exists, bool unvisited, bool valid)
         {
-            return null;
+            Vector2 new_coordinates = new Vector2(node.coordinates.x, node.coordinates.y);
+            new_coordinates.x -= 1;
+            Node new_node = node_by_vector(new_coordinates);
+            // If the existance of the node is required, test if it exists
+            if (exists)
+            {
+                if (new_node == null)
+                {
+                    return null;
+                }
+            }
+            // If the node has to be unvisited, test if it has been visited (The existance of the node is a requirement for this)
+            if (exists && unvisited)
+            {
+                if (new_node.visited)
+                {
+                    return null;
+                }
+            }
+            // If a path between the two nodes has to be valid, test if there is a wall between the two (The existance of the node is a requirement for this)
+            if (exists && valid)
+            {
+                if (new_node.walls.east_active)
+                {
+                    return null;
+                }
+            }
+            return new_node;
         }
 
         /// <summary>

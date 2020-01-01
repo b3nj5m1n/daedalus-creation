@@ -16,5 +16,10 @@ namespace daedalus_creation
             x = X;
             y = Y;
         }
+
+        public override string ToString()
+        {
+            return "(" + x + "|" + y + ")";
+        }
     }
 }

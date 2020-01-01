@@ -29,6 +29,8 @@ namespace daedalus_creation
             Renderer r = new Renderer(g, this, this.CreateGraphics());
             r.draw_grid();
             Console.WriteLine(".");
+            r.remove_wall(g.node_by_vector(new Vector2(5, 5)), g.node_by_vector(new Vector2(5, 6)));
+            r.draw_grid();
         }
 
         private void Canvas_Form_KeyPress(object sender, KeyPressEventArgs e)
