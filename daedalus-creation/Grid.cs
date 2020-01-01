@@ -11,7 +11,7 @@ namespace daedalus_creation
         Node[,] grid;
         public int[] size;
 
-        Grid(int[] Size)
+        public Grid(int[] Size)
         {
             size = Size;
         }
