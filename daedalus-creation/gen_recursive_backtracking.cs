@@ -17,10 +17,7 @@ namespace daedalus_creation
         /// </summary>
         /// <param name="Grid">Grid instance</param>
         public gen_recursive_backtracking(Grid Grid)
-            : this(Grid, Grid.node_by_vector(new Vector2(0, 0)))
-        {
-
-        }
+            : this(Grid, Grid.node_by_vector(new Vector2(0, 0))) { }
         /// <summary>
         /// Initalize object
         /// </summary>
@@ -39,8 +36,6 @@ namespace daedalus_creation
             int visited_count = 1;
             // Set visited property of node to true
             current_node.visited = true;
-            // Varible to store the last coordinates
-            Node old_coords = current_node;
             // Run until all nodes in the grid have been visited
             if (visited_count < grid.size[0] * grid.size[1])
             {

@@ -31,7 +31,8 @@ namespace daedalus_creation
             r.draw_grid();
             Thread.Sleep(0);
             //g.remove_wall(g.node_by_vector(new Vector2(5, 5)), g.node_by_vector(new Vector2(4, 5)));
-            generator gen = new gen_recursive_backtracking(g);
+            // generator gen = new gen_recursive_backtracking(g);
+            generator gen = new gen_hunt_and_kill(g);
             gen.run(50, r);
             // r.draw_grid();
         }
