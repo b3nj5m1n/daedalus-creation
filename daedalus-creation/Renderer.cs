@@ -133,5 +133,134 @@ namespace daedalus_creation
             }
         }
 
+        /// <summary>
+        /// Get appropriate size of a path on the x axis
+        /// </summary>
+        /// <returns></returns>
+        public float get_path_size_x()
+        {
+            return get_wall_size_x() / (float)theme.path_factor;
+        }
+        /// <summary>
+        /// Get appropriate size of a path on the y axis
+        /// </summary>
+        /// <returns></returns>
+        public float get_path_size_y()
+        {
+            return get_wall_size_y() / (float)theme.path_factor;
+        }
+
+        /// <summary>
+        /// Draw a line from the middle of the node to the right
+        /// </summary>
+        /// <param name="n"></param>
+        public void line_right(Node n)
+        {
+            Brush brush = new SolidBrush(theme.color_special);
+            float thingy_size_x = get_path_size_x();
+            float thingy_size_y = get_path_size_y();
+            // Calculate position of thingy
+            float n_pos_x = (n.coordinates.x * (get_node_size_x() + get_wall_size_x())) + (get_node_size_x() / 2) - (thingy_size_x / 2);
+            float n_pos_y = (n.coordinates.y * (get_node_size_y() + get_wall_size_y())) + (get_node_size_y() / 2) - (thingy_size_y / 2);
+            // Draw thingy
+            graphics.FillRectangle(brush, n_pos_x, n_pos_y, ((get_node_size_x() + thingy_size_x) / 2) + get_wall_size_x() + 1, thingy_size_y);
+        }
+        /// <summary>
+        /// Draw a line from the middle of the node to the left
+        /// </summary>
+        /// <param name="n"></param>
+        public void line_left(Node n)
+        {
+            Brush brush = new SolidBrush(theme.color_special);
+            float thingy_size_x = get_path_size_x();
+            float thingy_size_y = get_path_size_y();
+            // Calculate position of thingy
+            float n_pos_x = (n.coordinates.x * (get_node_size_x() + get_wall_size_x()));
+            float n_pos_y = (n.coordinates.y * (get_node_size_y() + get_wall_size_y())) + (get_node_size_y() / 2) - (thingy_size_y / 2);
+            // Draw thingy
+            graphics.FillRectangle(brush, n_pos_x, n_pos_y, (get_node_size_x() / 2) + (thingy_size_x / 2), thingy_size_y);
+        }
+        /// <summary>
+        /// Draw a line from the middle of the node to the top
+        /// </summary>
+        /// <param name="n"></param>
+        public void line_top(Node n)
+        {
+            Brush brush = new SolidBrush(theme.color_special);
+            float thingy_size_x = get_path_size_x();
+            float thingy_size_y = get_path_size_y();
+            // Calculate position of thingy
+            float n_pos_x = (n.coordinates.x * (get_node_size_x() + get_wall_size_x())) + (get_node_size_x() / 2) - (thingy_size_x / 2);
+            float n_pos_y = (n.coordinates.y * (get_node_size_y() + get_wall_size_y()));
+            // Draw thingy
+            graphics.FillRectangle(brush, n_pos_x, n_pos_y, thingy_size_x, (get_node_size_y() / 2) + (thingy_size_y / 2));
+        }
+        /// <summary>
+        /// Draw a line from the middle of the node to the down
+        /// </summary>
+        /// <param name="n"></param>
+        public void line_down(Node n)
+        {
+            Brush brush = new SolidBrush(theme.color_special);
+            float thingy_size_x = get_path_size_x();
+            float thingy_size_y = get_path_size_y();
+            // Calculate position of thingy
+            float n_pos_x = (n.coordinates.x * (get_node_size_x() + get_wall_size_x())) + (get_node_size_x() / 2) - (thingy_size_x / 2);
+            float n_pos_y = (n.coordinates.y * (get_node_size_y() + get_wall_size_y())) + (get_node_size_y() / 2) - (thingy_size_y / 2);
+            // Draw thingy
+            graphics.FillRectangle(brush, n_pos_x, n_pos_y, thingy_size_x, (get_node_size_y() / 2) + (thingy_size_y / 2) + get_wall_size_y() + 1);
+        }
+        /// <summary>
+        /// Draw a connection betweeen two nodes
+        /// </summary>
+        /// <param name="n1">Node 1</param>
+        /// <param name="n2">Node 2</param>
+        public void draw_connection(Node n1, Node n2)
+        {
+            // Test if node 2 is to the right of node 1
+            if (grid.get_right(n1, true, false, false) == n2)
+            {
+                // Disable east wall of node 1 to make a connection between the two
+                // nodes[x1, y1].east_wall_special = true;
+                line_right(n1);
+                line_left(n2);
+            }
+            // Test if node 2 is to the left of node 1
+            if (grid.get_left(n1, true, false, false) == n2)
+            {
+                // Disable east wall of node 2 to make a connection between the two
+                // nodes[x2, y2].east_wall_special = true;
+                line_left(n1);
+                line_right(n2);
+            }
+            // Test if node 2 is to the top of node 1
+            if (grid.get_up(n1, true, false, false) == n2)
+            {
+                // Disable east wall of node 2 to make a connection between the two
+                // nodes[x2, y2].south_wall_special = true;
+                line_top(n1);
+                line_down(n2);
+            }
+            // Test if node 2 is to the bottom of node 1
+            if (grid.get_down(n1, true, false, false) == n2)
+            {
+                // Disable east wall of node 2 to make a connection between the two
+                // nodes[x1, y1].south_wall_special = true;
+                line_down(n1);
+                line_top(n2);
+            }
+        }
+        /// <summary>
+        /// Draw connections between every node in the list
+        /// </summary>
+        /// <param name="path">Path to draw</param>
+        public void draw_path(List<Node> path)
+        {
+            for (int i = 0; i < path.Count - 1; i++)
+            {
+                draw_connection(path[i], path[i+1]);
+            }
+        }
+
     }
 }
