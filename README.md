@@ -5,7 +5,7 @@
 ### Generation
 - recursive backtracking
 - hunt and kill
-- aldgous broder
+- aldous broder
 - growing tree
 - binary tree
 ### Solving
