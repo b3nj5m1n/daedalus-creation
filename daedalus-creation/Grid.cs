@@ -14,6 +14,7 @@ namespace daedalus_creation
         public Grid(int[] Size)
         {
             size = Size;
+            grid = new Node[size[0], size[1]];
         }
 
         /// <summary>
@@ -21,7 +22,13 @@ namespace daedalus_creation
         /// </summary>
         public void initalize()
         {
-
+            for (int x = 0; x < size[0]; x++)
+            {
+                for (int y = 0; y < size[1]; y++)
+                {
+                    grid[x, y] = new Node(new Vector2(x, y));
+                }
+            }
         }
 
         /// <summary>
