@@ -40,6 +40,23 @@ namespace daedalus_creation
         }
 
         /// <summary>
+        /// Resets some properties of the nodes in the grid, such as parents
+        /// </summary>
+        public void reset()
+        {
+            for (int x = 0; x < size[0]; x++)
+            {
+                for (int y = 0; y < size[1]; y++)
+                {
+                    grid[x, y].parent = null;
+                    grid[x, y].special = false;
+                    grid[x, y].specific = null;
+                    grid[x, y].visited = false;
+                }
+            }
+        }
+
+        /// <summary>
         /// Get the node upwards of the given one
         /// </summary>
         /// <param name="node">Which node to go off</param>
