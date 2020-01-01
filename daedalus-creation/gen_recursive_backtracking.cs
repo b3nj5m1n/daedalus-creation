@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading;
+using System.Timers;
 
 namespace daedalus_creation
 {
@@ -14,6 +14,8 @@ namespace daedalus_creation
     {
         Random rnd = new Random();
         public Grid grid;
+        Timer timer;
+        Renderer renderer;
         // This implementation will use the parent node attribute of the node class instead of a stack
         public Node current_node;
 
@@ -52,13 +54,26 @@ namespace daedalus_creation
         /// Run the algorithm with visualisation
         /// </summary>
         /// <param name="delay">Delay in milliseconds</param>
-        public void run(int delay, Renderer renderer)
+        public void run(int delay, Renderer Renderer)
         {
-            while (step() == true)
+            renderer = Renderer;
+            timer = new Timer(delay);
+            timer.Elapsed += OnTimedEvent;
+            timer.Start();
+        }
+        private void OnTimedEvent(Object source, System.Timers.ElapsedEventArgs e)
+        {
+            if (step() == false)
             {
-                renderer.draw_grid();
+                timer.Stop();
+            }
+            else
+            {
+                foreach (Node neighbour in grid.get_surroundings(current_node, true, false, false))
+                {
+                    renderer.draw_node(neighbour);
+                }
                 renderer.draw_node(current_node, Color.LightSeaGreen);
-                Thread.Sleep(delay);
             }
         }
 
