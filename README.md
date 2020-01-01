@@ -9,5 +9,5 @@
 - growing tree
 - binary tree
 ### Solving
-- 
+- astar
 
