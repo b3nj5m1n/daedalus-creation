@@ -55,6 +55,20 @@ namespace daedalus_creation
                 }
             }
         }
+        
+        /// <summary>
+        /// Set specific property for every node in the grid
+        /// </summary>
+        public void set_specific(dynamic specific)
+        {
+            for (int x = 0; x < size[0]; x++)
+            {
+                for (int y = 0; y < size[1]; y++)
+                {
+                    grid[x, y].specific = specific;
+                }
+            }
+        }
 
         /// <summary>
         /// Get the node upwards of the given one

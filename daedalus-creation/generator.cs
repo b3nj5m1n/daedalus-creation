@@ -36,6 +36,7 @@ namespace daedalus_creation
             grid = Grid;
             current_node = starting_point;
             old_node = current_node;
+            grid.reset();
         }
 
         /// <summary>
