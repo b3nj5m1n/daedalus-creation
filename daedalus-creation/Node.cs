@@ -9,19 +9,19 @@ namespace daedalus_creation
     class Node
     {
         // Stores the coordinates in the grid
-        Vector2 coordinates;
+        public Vector2 coordinates;
         // Parent nodes are used in certain algorithms
-        Node parent;
+        public Node parent;
         // Has the node been visited or not, used in certain algorithms
-        bool visited;
+        public bool visited;
         // Is the node special, will cause it to be drawn in a different color
-        bool special;
+        public bool special;
         // Walls sourrounding the node
-        Walls walls;
+        public Walls walls;
         // Potential information that is neccessary for certain algorithms
-        dynamic specific;
+        public dynamic specific;
 
-        Node(Vector2 Coordinates)
+        public Node(Vector2 Coordinates)
         {
             coordinates = Coordinates;
             parent = null;
