@@ -9,10 +9,10 @@ namespace daedalus_creation
 {
     class Theme
     {
-        int wall_factor = 6;
-        int path_factor = 10;
-        Color color_default = Color.White;
-        Color color_wall = Color.Black;
-        Color color_special = Color.PaleVioletRed;
+        public int wall_factor = 6;
+        public int path_factor = 10;
+        public Color color_default = Color.White;
+        public Color color_wall = Color.Black;
+        public Color color_special = Color.PaleVioletRed;
     }
 }
