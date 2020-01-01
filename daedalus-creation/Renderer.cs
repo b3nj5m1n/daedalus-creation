@@ -91,6 +91,20 @@ namespace daedalus_creation
         }
 
         /// <summary>
+        /// Draw a single node using a special color for the node itself and the default colors for the rest
+        /// </summary>
+        /// <param name="node">Node to draw</param>
+        public void draw_node(Node node, Color c_node)
+        {
+            Color c_swall = node.walls.south_active ? theme.color_wall : theme.color_default;
+            c_swall = node.special ? theme.color_special : c_swall;
+            Color c_ewall = node.walls.east_active ? theme.color_wall : theme.color_default;
+            c_ewall = node.special ? theme.color_special : c_ewall;
+            Color c_bg = node.special ? theme.color_special : theme.color_wall;
+            draw_node(node, c_node, c_swall, c_ewall, c_bg);
+        }
+
+        /// <summary>
         /// Draw a single node using the default colors specified in the theme
         /// </summary>
         /// <param name="node">Node to draw</param>

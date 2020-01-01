@@ -28,8 +28,9 @@ namespace daedalus_creation
             g.initalize();
             Renderer r = new Renderer(g, this, this.CreateGraphics());
             r.draw_grid();
-            Console.WriteLine(".");
-            r.remove_wall(g.node_by_vector(new Vector2(5, 5)), g.node_by_vector(new Vector2(5, 6)));
+            //g.remove_wall(g.node_by_vector(new Vector2(5, 5)), g.node_by_vector(new Vector2(4, 5)));
+            gen_recursive_backtracking generator = new gen_recursive_backtracking(g);
+            generator.run(50, r);
             r.draw_grid();
         }
 

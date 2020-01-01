@@ -209,7 +209,35 @@ namespace daedalus_creation
         /// <returns></returns>
         public List<Node> get_surroundings(Node node, bool exists, bool unvisited, bool valid)
         {
-            return null;
+            Node up = get_up(node, exists, unvisited, valid);
+            Node down = get_down(node, exists, unvisited, valid);
+            Node right = get_right(node, exists, unvisited, valid);
+            Node left = get_left(node, exists, unvisited, valid);
+
+            List<Node> neighbours = new List<Node>();
+            if (up != null)
+            {
+                neighbours.Add(up);
+            }
+            if (down != null)
+            {
+                neighbours.Add(down);
+            }
+            if (right != null)
+            {
+                neighbours.Add(right);
+            }
+            if (left != null)
+            {
+                neighbours.Add(left);
+            }
+
+            if (neighbours.Count == 0)
+            {
+                return null;
+            }
+
+            return neighbours;
         }
 
         /// <summary>
@@ -236,13 +264,9 @@ namespace daedalus_creation
         /// <param name="n2">Second Node</param>
         public void remove_wall(Node n1, Node n2)
         {
-            Console.WriteLine("Removing wall between " + n1.coordinates.ToString() + " and " + n2.coordinates.ToString());
-            Node R = get_right(n1, true, false, false);
-            Console.WriteLine(R.coordinates.ToString() + "," + n1.coordinates.ToString() + "," + n2.coordinates.ToString());
             // Test if node 2 is to the right of node 1
-            if (R.coordinates.x == n2.coordinates.x && R.coordinates.y == n2.coordinates.y)
+            if (get_right(n1, true, false, false) == n2)
             {
-                Console.WriteLine("...");
                 // Disable east wall of node 1 to make a connection between the two
                 n1.walls.east_active = false;
             }
