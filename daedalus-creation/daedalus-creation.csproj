@@ -59,6 +59,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="generator.cs" />
+    <Compile Include="gen_aldous_broder.cs" />
     <Compile Include="gen_hunt_and_kill.cs" />
     <Compile Include="gen_recursive_backtracking.cs" />
     <Compile Include="Grid.cs" />

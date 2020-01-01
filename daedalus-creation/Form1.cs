@@ -25,14 +25,15 @@ namespace daedalus_creation
 
         private void test()
         {
-            Grid g = new Grid(new int[2] { 10, 10 });
+            Grid g = new Grid(new int[2] { 5, 5 });
             g.initalize();
             Renderer r = new Renderer(g, this, this.CreateGraphics());
             r.draw_grid();
             Thread.Sleep(0);
             //g.remove_wall(g.node_by_vector(new Vector2(5, 5)), g.node_by_vector(new Vector2(4, 5)));
             // generator gen = new gen_recursive_backtracking(g);
-            generator gen = new gen_hunt_and_kill(g);
+            //generator gen = new gen_hunt_and_kill(g);
+            generator gen = new gen_aldous_broder(g);
             gen.run(50, r);
             // r.draw_grid();
         }
