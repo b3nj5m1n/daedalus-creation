@@ -9,5 +9,4 @@
 - [growing tree](https://weblog.jamisbuck.org/2011/1/27/maze-generation-growing-tree-algorithm.html)
 - [binary tree](https://weblog.jamisbuck.org/2011/2/1/maze-generation-binary-tree-algorithm.html)
 ### Solving
-- [astar](https://en.wikipedia.org/wiki/A*_search_algorithm)
 
