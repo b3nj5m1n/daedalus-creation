@@ -68,11 +68,13 @@ namespace daedalus_creation
             //    path.Add(path[path.Count - 1].parent);
             //}
             //r.draw_path(path);
-            List<Node> path = new List<Node>();
-            solver slv = new slv_astar(g, new Vector2(0,6), new Vector2(10, 6));
+
+            List<Node> path;
+            slv_astar slv = new slv_astar(g, new Vector2(0, 6), new Vector2(10, 6));
             slv.run(100, r);
             path = slv.get_path();
             r.draw_path(path);
+            //Console.WriteLine(slv.GetDistance(g.node_by_vector(new Vector2(0, 6)), g.node_by_vector(new Vector2(2, 8))));
         }
     }
 }

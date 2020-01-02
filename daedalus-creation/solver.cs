@@ -30,13 +30,15 @@ namespace daedalus_creation
         /// <summary>
         /// Just run the algorithm without visualisation
         /// </summary>
-        public List<Node> run()
+        public bool run()
         {
-            while (step() == true)
-            {
+            //while (step() == true)
+            //{
 
-            }
-            return get_path();
+            //}
+            //return true;
+            step();
+            return true;
         }
 
         /// <summary>
@@ -46,41 +48,26 @@ namespace daedalus_creation
         public bool run(int delay, Renderer Renderer)
         {
             renderer = Renderer;
-            // If the delay is not 0 milliseconds use the timer and its event
-            if (delay != 0)
-            {
-                timer = new Timer(delay);
-                timer.Elapsed += OnTimedEvent;
-                timer.Start();
-                return true;
-            }
-            // If the delay is 0 just draw after every step
-            else
-            {
-                while (step() != false)
-                {
-                    foreach (Node neighbour in grid.get_surroundings(current_node, true, false, true))
-                    {
-                        renderer.draw_node(neighbour, Color.LightPink);
-                    }
-                    renderer.draw_node(current_node, Color.LightSeaGreen);
-                }
-                return true;
-            }
+            step();
+            return true;
+            //// If the delay is not 0 milliseconds use the timer and its event
+            //if (delay != 0)
+            //{
+            //    timer = new Timer(delay);
+            //    timer.Elapsed += OnTimedEvent;
+            //    timer.Start();
+            //    return true;
+            //}
+            //// If the delay is 0 just draw after every step
+            //else
+            //{
 
+            //}
+            //return false;
         }
         private void OnTimedEvent(Object source, System.Timers.ElapsedEventArgs e)
         {
-            timer.Stop();
-            if (step() == true)
-            {
-                foreach (Node neighbour in grid.get_surroundings(current_node, true, false, true))
-                {
-                    renderer.draw_node(neighbour, Color.LightPink);
-                }
-                renderer.draw_node(current_node, Color.LightSeaGreen);
-                timer.Start();
-            }
+       
         }
 
         public virtual bool step()
