@@ -35,15 +35,15 @@ namespace daedalus_creation
             Thread.Sleep(0);
             //g.remove_wall(g.node_by_vector(new Vector2(5, 5)), g.node_by_vector(new Vector2(4, 5)));
             //gen = new gen_recursive_backtracking(g);
-            generator gen = new gen_hunt_and_kill(g);
+            //generator gen = new gen_hunt_and_kill(g);
             //generator gen = new gen_aldous_broder(g);
             //generator gen = new gen_growing_tree(g, 1);
             //generator gen = new gen_binary_tree(g, 3);
-            gen.run(5, r);
-            //r.draw_grid();
+            //gen.run(5, r);
+            r.draw_grid();
             //r.draw_connection(g.node_by_vector(new Vector2(2,0)), g.node_by_vector(new Vector2(1,0)));
 
-            
+
 
         }
 
@@ -68,23 +68,11 @@ namespace daedalus_creation
             //    path.Add(path[path.Count - 1].parent);
             //}
             //r.draw_path(path);
-<<<<<<< HEAD
-<<<<<<< HEAD
 
             List<Node> path;
             slv_astar slv = new slv_astar(g, new Vector2(0, 6), new Vector2(10, 6));
             slv.run(100, r);
             path = slv.get_path();
-=======
-            List<Node> path = new List<Node>();
-            solver slv = new slv_astar(g, new Vector2(0,0), new Vector2(14, 14));
-            path = slv.solve();
->>>>>>> parent of 0055e3b... Started work on solving visualisation; ASTAR NOT WORKING PROPERLY
-=======
-            List<Node> path = new List<Node>();
-            solver slv = new slv_astar(g, new Vector2(0,0), new Vector2(14, 14));
-            path = slv.solve();
->>>>>>> parent of 0055e3b... Started work on solving visualisation; ASTAR NOT WORKING PROPERLY
             r.draw_path(path);
             //Console.WriteLine(slv.GetDistance(g.node_by_vector(new Vector2(0, 6)), g.node_by_vector(new Vector2(2, 8))));
         }

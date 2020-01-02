@@ -14,8 +14,8 @@ namespace daedalus_creation
         public Grid grid;
         public Timer timer;
         public Renderer renderer;
-        public Node current_node;
         private Node old_node;
+        public Node current_node;
 
         /// <summary>
         /// Initalize object, starting point is 0,0
