@@ -20,6 +20,7 @@ namespace daedalus_creation
         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         /// <summary>
         /// Just run the algorithm without visualisation
         /// </summary>
@@ -69,6 +70,9 @@ namespace daedalus_creation
         }
 
         public virtual List<Node> get_path()
+=======
+        public virtual List<Node> solve()
+>>>>>>> parent of 0055e3b... Started work on solving visualisation; ASTAR NOT WORKING PROPERLY
 =======
         public virtual List<Node> solve()
 >>>>>>> parent of 0055e3b... Started work on solving visualisation; ASTAR NOT WORKING PROPERLY

@@ -18,6 +18,7 @@ namespace daedalus_creation
         public slv_astar(Grid Grid, Vector2 starting_point, Vector2 end_point) : base(Grid, starting_point, end_point)
         {
 <<<<<<< HEAD
+<<<<<<< HEAD
             grid.set_specific(new slv_astar_specific());
 
         }
@@ -64,6 +65,13 @@ namespace daedalus_creation
                         int newCostToNeighbour = current.specific.g_cost + distance(current, neighbour);
                         if (newCostToNeighbour < neighbour.specific.g_cost || !openSet.Contains(neighbour))
 =======
+=======
+        }
+
+
+        public override List<Node> solve()
+        {
+>>>>>>> parent of 0055e3b... Started work on solving visualisation; ASTAR NOT WORKING PROPERLY
             // Open, list containing all the nodes that haven't been evaluated yet
             List<Node> set_o = new List<Node>();
             // Closed, list containing all the Nodes that have already been evaluated
@@ -138,6 +146,9 @@ namespace daedalus_creation
 
             // There is no solution
             return null;
+<<<<<<< HEAD
+>>>>>>> parent of 0055e3b... Started work on solving visualisation; ASTAR NOT WORKING PROPERLY
+=======
 >>>>>>> parent of 0055e3b... Started work on solving visualisation; ASTAR NOT WORKING PROPERLY
         }
 
@@ -155,6 +166,7 @@ namespace daedalus_creation
         }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
         private Node get_lowest()
         {
             Console.WriteLine("Trying to switch");
@@ -162,6 +174,8 @@ namespace daedalus_creation
             Console.WriteLine("F_cost to beat: " + n.specific.f_cost);
             foreach (Node n_ in openSet)
 =======
+=======
+>>>>>>> parent of 0055e3b... Started work on solving visualisation; ASTAR NOT WORKING PROPERLY
         private List<Node> retrace_path_astar(Node n1, Node n2)
         {
             List<Node> path = new List<Node>();

@@ -69,11 +69,17 @@ namespace daedalus_creation
             //}
             //r.draw_path(path);
 <<<<<<< HEAD
+<<<<<<< HEAD
 
             List<Node> path;
             slv_astar slv = new slv_astar(g, new Vector2(0, 6), new Vector2(10, 6));
             slv.run(100, r);
             path = slv.get_path();
+=======
+            List<Node> path = new List<Node>();
+            solver slv = new slv_astar(g, new Vector2(0,0), new Vector2(14, 14));
+            path = slv.solve();
+>>>>>>> parent of 0055e3b... Started work on solving visualisation; ASTAR NOT WORKING PROPERLY
 =======
             List<Node> path = new List<Node>();
             solver slv = new slv_astar(g, new Vector2(0,0), new Vector2(14, 14));
