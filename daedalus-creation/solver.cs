@@ -1,32 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Timers;
 
 namespace daedalus_creation
 {
     abstract class solver
     {
         public Grid grid;
-        public Node Start;
-        public Node Destination;
-        public Timer timer;
-        public Renderer renderer;
-        public Random rnd = new Random();
-        private Node old_node;
-        public Node current_node;
+        public Vector2 starting_point;
+        public Vector2 end_point;
 
         public solver(Grid Grid, Vector2 Starting_point, Vector2 End_point)
         {
             grid = Grid;
-            Start = grid.node_by_vector(Starting_point);
-            Destination = grid.node_by_vector(End_point);
-            old_node = current_node;
+            starting_point = Starting_point;
+            end_point = End_point;
         }
 
+<<<<<<< HEAD
         /// <summary>
         /// Just run the algorithm without visualisation
         /// </summary>
@@ -76,6 +69,9 @@ namespace daedalus_creation
         }
 
         public virtual List<Node> get_path()
+=======
+        public virtual List<Node> solve()
+>>>>>>> parent of 0055e3b... Started work on solving visualisation; ASTAR NOT WORKING PROPERLY
         {
             return null;
         }
