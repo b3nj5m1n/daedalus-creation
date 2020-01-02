@@ -71,8 +71,6 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Renderer.cs" />
-    <Compile Include="slv_astar.cs" />
-    <Compile Include="solver.cs" />
     <Compile Include="Theme.cs" />
     <Compile Include="Vector2.cs" />
     <Compile Include="Walls.cs" />

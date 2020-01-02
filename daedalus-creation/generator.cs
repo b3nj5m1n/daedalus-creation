@@ -82,11 +82,8 @@ namespace daedalus_creation
         }
         private void OnTimedEvent(Object source, System.Timers.ElapsedEventArgs e)
         {
-            if (step() == false)
-            {
-                timer.Stop();
-            }
-            else
+            timer.Stop();
+            if (step() == true)
             {
                 renderer.draw_node(old_node);
                 foreach (Node neighbour in grid.get_surroundings(current_node, true, false, false))
@@ -95,6 +92,7 @@ namespace daedalus_creation
                 }
                 renderer.draw_node(current_node, Color.LightSeaGreen);
                 old_node = current_node;
+                timer.Start();
             }
         }
 
